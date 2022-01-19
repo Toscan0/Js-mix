@@ -1,23 +1,24 @@
 import { initializeBricks, drawBricks, collisionDetection } from './bricks.js';
 import { canvas, clearCanvas } from './canvas.js';
-import { x, y, dx, dy, drawBall, checkColision } from './ball.js';
-import { drawPaddle } from './paddle.js';
+import { x, y, dx, dy, drawBall, checkColision, updateX, updateY } from './ball.js';
+import { drawPaddle, paddleX, updatePaddleX, paddleWidth } from './paddle.js';
 import { drawScore, drawLives } from './score.js';
-import { rightPressed, leftPressed } from './user-input.js';
+import { rightPressed, leftPressed, eventListener } from './user-input.js';
 
 initializeBricks();
+eventListener();
 
 function handleUserInput() {
     if (rightPressed) {
-        paddleX += 7;
+        updatePaddleX(paddleX + 7);
         if (paddleX + paddleWidth > canvas.width) {
-            paddleX = canvas.width - paddleWidth;
+            updatePaddleX(canvas.width - paddleWidth);
         }
     }
     else if (leftPressed) {
-        paddleX -= 7;
+        updatePaddleX(paddleX - 7);
         if (paddleX < 0) {
-            paddleX = 0;
+            updatePaddleX(0);
         }
     }
 }
@@ -36,8 +37,8 @@ function draw() {
 
     checkColision();
     handleUserInput();
-    x += dx;
-    y += dy;
+    updateX(x + dx);
+    updateY(y + dy);
     requestAnimationFrame(draw);
 }
 

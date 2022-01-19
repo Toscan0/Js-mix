@@ -1,4 +1,7 @@
-export { rightPressed, leftPressed };
+export { rightPressed, leftPressed, eventListener };
+
+import { canvas, ctx } from './canvas.js';
+import { paddleX, updatePaddleX, paddleWidth } from './paddle.js';
 
 var rightPressed = false;
 var leftPressed = false;
@@ -30,6 +33,6 @@ function keyUpHandler(e) {
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - canvas.offsetLeft;
     if (relativeX > 0 && relativeX < canvas.width) {
-        paddleX = relativeX - paddleWidth / 2;
+        updatePaddleX(relativeX - paddleWidth / 2);
     }
 }

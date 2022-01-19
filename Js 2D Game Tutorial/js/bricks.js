@@ -1,6 +1,8 @@
 import { canvas, ctx } from './canvas.js';
+import { score, setScore } from './score.js';
+import { x, y, dx, dy, drawBall, checkColision, updateDY } from './ball.js';
+
 export { initializeBricks, drawBricks, collisionDetection };
-import { x, y, dx, dy, drawBall, checkColision } from './ball.js';
 
 var brickRowCount = 3;
 var brickColumnCount = 5;
@@ -45,9 +47,9 @@ function collisionDetection() {
             var b = bricks[c][r];
             if (b.status == 1) {
                 if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
-                    dy = -dy;
+                    updateDY(-dy);
                     b.status = 0;
-                    score++;
+                    setScore(score + 1);
                     if (score == brickRowCount * brickColumnCount) {
                         alert("YOU WIN, CONGRATULATIONS!");
                         document.location.reload();

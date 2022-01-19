@@ -1,7 +1,8 @@
 import { canvas, ctx } from './canvas.js';
 import { gameOver } from './score.js';
+import { paddleX, paddleWidth, paddleHeight } from './paddle.js';
 
-export { x, y, dx, dy, drawBall, checkColision };
+export { x, y, dx, dy, drawBall, checkColision, updateX, updateY, updateDX, updateDY };
 
 var ballRadius = 10;
 var x = canvas.width / 2;
@@ -32,4 +33,20 @@ function checkColision() {
             gameOver();
         }
     }
+}
+
+function updateX(newX) {
+    x = newX;
+}
+
+function updateY(newY) {
+    y = newY;
+}
+
+function updateDX(newDX) {
+    dx = newDX;
+}
+
+function updateDY(newDY) {
+    dy = newDY;
 }

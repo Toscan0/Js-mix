@@ -1,6 +1,7 @@
+import { updateX } from './ball.js';
 import { canvas, ctx } from './canvas.js';
 
-export { drawPaddle };
+export { drawPaddle, updatePaddleX, paddleX, paddleWidth, paddleHeight };
 
 var paddleHeight = 10;
 var paddleWidth = 75;
@@ -12,4 +13,8 @@ function drawPaddle() {
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
+}
+
+function updatePaddleX(newVal) {
+    paddleX = newVal;
 }
