@@ -1,8 +1,9 @@
-import { initializeBricks, drawBricks } from './bricks.js';
+import { initializeBricks, drawBricks, collisionDetection } from './bricks.js';
 import { canvas, clearCanvas } from './canvas.js';
 import { x, y, dx, dy, drawBall, checkColision } from './ball.js';
 import { drawPaddle } from './paddle.js';
 import { drawScore, drawLives } from './score.js';
+import { rightPressed, leftPressed } from './user-input.js';
 
 initializeBricks();
 

@@ -1,3 +1,5 @@
+export { rightPressed, leftPressed };
+
 var rightPressed = false;
 var leftPressed = false;
 

@@ -1,4 +1,6 @@
-export { initializeBricks, drawBricks, collisionDetection};
+import { canvas, ctx } from './canvas.js';
+export { initializeBricks, drawBricks, collisionDetection };
+import { x, y, dx, dy, drawBall, checkColision } from './ball.js';
 
 var brickRowCount = 3;
 var brickColumnCount = 5;
