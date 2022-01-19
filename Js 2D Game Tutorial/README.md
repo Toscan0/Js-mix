@@ -1,3 +1,1 @@
-https://lesscss.org/ 
-
-based on https://www.youtube.com/watch?v=YD91G8DdUsw&t=472s&ab_channel=TraversyMedia
+based on https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
