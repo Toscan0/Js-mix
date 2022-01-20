@@ -1,35 +1,34 @@
-export { rightPressed, leftPressed };
+export { UserInput };
 
-var rightPressed = false;
-var leftPressed = false;
+class UserInput {
+    constructor() {
+        this.upPressed = 10;
+        this.downPressed = false;
+    }
 
-function eventListener() {
-    document.addEventListener("keydown", keyDownHandler, false);
-    document.addEventListener("keyup", keyUpHandler, false);
-    document.addEventListener("mousemove", mouseMoveHandler, false);
-}
+    eventListener() {
+        document.addEventListener("keydown", this.keyDownHandler, false);
+        document.addEventListener("keyup", this.keyUpHandler, false);
+        document.addEventListener("mousemove", this.mouseMoveHandler, false);
+    }
 
-function keyDownHandler(e) {
-    if (e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = true;
-    }
-    else if (e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = true;
-    }
-}
+    keyDownHandler(e) {
+        if (e.key == "Up" || e.key == "ArrowUp") {
+            //this.upPressed = this.upPressed + 10;
+            console.log("111111", this.upPressed);
+        }
+        //else if (e.key == "Down" || e.key == "ArrowDown") {
+        //    this.downPressed += -1;
+        //}
 
-function keyUpHandler(e) {
-    if (e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = false;
     }
-    else if (e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = false;
-    }
-}
 
-function mouseMoveHandler(e) {
-    var relativeX = e.clientX - canvas.offsetLeft;
-    if (relativeX > 0 && relativeX < canvas.width) {
-        paddleX = relativeX - paddleWidth / 2;
-    }
+    //keyUpHandler(e) {
+    //    if (e.key == "Up" || e.key == "ArrowUp") {
+    //        this.upPressed += 100;
+    //    }
+    //    else if (e.key == "Down" || e.key == "ArrowDown") {
+    //        this.downPressed += -2;
+    //    }
+    //}
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
+    <title> Planes </title>
     <style>
         * {
             padding: 0;
@@ -12,23 +12,26 @@
         body {
             background: #000
         }
+
         canvas {
-            background: #eee;
+            background: #fff;
             display: block;
             margin: 0 auto;
         }
+
+        #gameCanvas {
+            margin-top: 8px;
+        }
     </style>
+
     <!-- Js files-->
-    <script type="module" src="js/ball.js"></script>
-    <script type="module" src="js/bricks.js"></script>
     <script type="module" src="js/canvas.js"></script>
+    <script type="module" src="js/aircraft.js"></script>
     <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/paddle.js"></script>
-    <script type="module" src="js/score.js"></script>
     <script type="module" src="js/user-input.js"></script>
 
 </head>
 <body>
-    <canvas id="myCanvas" width="680" height="320" style="margin-top: 8px" > </canvas>/>
+    <canvas id="gameCanvas" />
 </body>
 </html>
